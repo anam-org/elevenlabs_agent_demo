@@ -3,7 +3,7 @@
 > [!WARNING]
 > **This demo isn't maintained. Don't deploy it as it is.** `GET /api/config` has no authentication: it creates an Anam session token with your API key and returns it, with the ElevenLabs agent ID, to anyone who calls it. Any website or script could use it to start sessions on your Anam account. The ElevenLabs agent must also be public, because the browser connects to it without a signed URL. It uses an old version of the Anam SDK (4.7).
 >
-> Build on the maintained example instead: [examples/elevenlabs-server-side-agent-nextjs](https://github.com/anam-org/anam-cookbook/tree/main/examples/elevenlabs-server-side-agent-nextjs) in anam-cookbook. It keeps the keys and IDs on the server, protects the session route and limits how many sessions start. The [ElevenLabs Agents docs](https://anam.ai/docs/integrations/elevenlabs/agents) walk through the same setup.
+> Follow the [ElevenLabs Agents docs](https://anam.ai/docs/integrations/elevenlabs/agents) instead. Their server route keeps the keys and IDs on the server, rejects requests from other websites, and rate-limits how many sessions start. It isn't user authentication, so add your own sign-in check if your app has users. The maintained cookbook example, [examples/elevenlabs-server-side-agent-nextjs](https://github.com/anam-org/anam-cookbook/tree/main/examples/elevenlabs-server-side-agent-nextjs), follows the same setup.
 
 A demonstration of integrating [ElevenLabs Conversational AI](https://elevenlabs.io/conversational-ai) with [Anam](https://anam.ai) avatars using **audio passthrough mode**. ElevenLabs handles the conversational AI (speech recognition, LLM, and voice synthesis), while Anam provides real-time avatar lip-sync visualization.
 
